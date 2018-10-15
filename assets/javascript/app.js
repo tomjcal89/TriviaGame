@@ -4,7 +4,7 @@ var correct = 0;
 var incorrect = 0;
 var unanswered = 0;
 
-var time = 10;
+var time = 9;
 var intervalId;
 
 
@@ -30,19 +30,19 @@ $("#doneId").click(function () {
 //timer that starts counting down on a new page once the "start" button was clicked
 
 function run() {
-    intervalId = setInterval(decrement, 1000);
+    clearInterval(intervalId);
+    intervalId = setInterval(decrement, 1000)
 }
 
 function decrement() {
-    
     $(".timerClass").text("Time Remaining: " + time + " Seconds");
     time--;
 
     if (time === -1) {
         $(".secondHidden").show();
         $(".hidden").hide();
-    };
-};
+    }
+}
 
 
 
