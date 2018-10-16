@@ -1,30 +1,75 @@
 
 // make a selection of var's for the game
-var correct = 0;
-var incorrect = 0;
-var unanswered = 0;
 
+var wins = 0;
+var loss = 0;
+var unanswered = 0;
+var totalQues = 2;
 var time = 9;
 var intervalId;
+var answers = ["300", "Turkey"];
 
 
-// make an array of answers for the game?
-var answers = ["300", "Turkey", "New York"];
+// make function to calulate the scores when they press the finished button.
+function submitAnswers() {
+
+
+//listing the questions
+    var q1 = document.forms["trivia"]["q1"].value;
+    var q2 = document.forms["trivia"]["q2"].value;
+
+    //for loop to check for unanswered questions
+    for (i = 1; i <= totalQues; i++) {
+        if (eval("q" + i) != answers[i - 1] || (eval("q" + i) != null || eval("q" + i) != "")) {
+            loss++;
+            document.getElementById("incorrectId").innerHTML = ("Incorrect: " + loss);
+        } 
+    }
+    
+    
+    
+    
+    for (i = 1; i <= totalQues; i++) {
+        if (eval("q" + i) == null || eval("q" + i) == "") {
+            unanswered++;
+            document.getElementById("unansweredId").innerHTML =
+                ("Unanswered: " + unanswered)
+        } 
+    }
+//for lopp to check for correct answers
+    for (i = 1; i <= totalQues; i++) {
+        if (eval("q" + i) == answers[i - 1]) {
+            wins++;
+            document.getElementById("correctId").innerHTML = ("Correct: " + wins);
+        } 
+        //adding up incorrect answers
+    }
+}
 
 //hide all questions and timer until the "start" button is clicked
-$(".hidden, .secondHidden").hide();
+$(".timerClass, .hidden, .secondHidden" ).hide();
 
-//showing all elements besides final score and reset button
+//when start is pressed, showing the time remaining, hide the start button, and show questions
 $("#startId").click(function () {
     run()
-    $(".hidden").show();
+    $(".hidden, .timerClass").show();
     $("#startId").hide();
-    
+
 });
 
+//hide questions, show timer at stopped time, correct, incorrect and unanswered scores
 $("#doneId").click(function () {
+    stopTimer()
+   
     $(".secondHidden").show();
     $(".hidden").hide();
+    $(".timerClass").show();
+    document.getElementById("correctId").innerHTML = ("Correct: " + wins);
+    document.getElementById("incorrectId").innerHTML = ("Incorrect: " + wins)
+    document.getElementById("unansweredId").innerHTML =
+        ("Unanswered: " + unanswered)
+
+    return submitAnswers();
 });
 
 //timer that starts counting down on a new page once the "start" button was clicked
@@ -34,24 +79,26 @@ function run() {
     intervalId = setInterval(decrement, 1000)
 }
 
+//stoping the timer 
+function stopTimer (){
+    clearInterval(intervalId);
+}
+
+//when the timer runs out, hide questions, show time, and show correct, unanswered questions and incorrect answeres.
 function decrement() {
     $(".timerClass").text("Time Remaining: " + time + " Seconds");
     time--;
-
     if (time === -1) {
+        stopTimer();
         $(".secondHidden").show();
         $(".hidden").hide();
+        document.getElementById("correctId").innerHTML = ("Correct: " + wins);
+        document.getElementById("incorrectId").innerHTML = ("Incorrect: " + wins)
+        document.getElementById("unansweredId").innerHTML =
+            ("Unanswered: " + unanswered)
+        return submitAnswers();
     }
 }
 
-
-
-
-//show the listed questions after the stat button is clicked
-
-//tally the correct, incorrect and unanswered questions
-
-
-//when the "Finished!" button is clicked, new page will show tallying "correct", "incorrect" and unanswered questions
-
+//function needed to reset the game.
 
