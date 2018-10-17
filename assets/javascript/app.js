@@ -23,20 +23,15 @@ function submitAnswers() {
             unanswered++;
             document.getElementById("unansweredId").innerHTML =
                 ("Unanswered: " + unanswered)
-        } else if (eval("q" + i) !== answers[i - 1] || null || ""){
+        } else if (eval("q" + i) !== answers[i - 1] || null || "") {
             loss++;
             document.getElementById("incorrectId").innerHTML = ("Incorrect: " + loss);
-        }
-    }
-    //for lopp to check for correct answers
-    for (i = 1; i <= totalQues; i++) {
-        if (eval("q" + i) == answers[i - 1]) {
+        } else if (eval("q" + i) == answers[i - 1]) {
             wins++;
             document.getElementById("correctId").innerHTML = ("Correct: " + wins);
-        } 
-        }
     }
-
+    }
+}
 
 //hide all questions and timer until the "start" button is clicked
 $(".timerClass, .hidden, .secondHidden").hide();
