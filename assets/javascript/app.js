@@ -5,7 +5,7 @@ var wins = 0;
 var loss = 0;
 var unanswered = 0;
 var totalQues = 2;
-var time = 9;
+var time = 10;
 var intervalId;
 var answers = ["300", "Turkey"];
 
@@ -29,12 +29,28 @@ function submitAnswers() {
         } else if (eval("q" + i) == answers[i - 1]) {
             wins++;
             document.getElementById("correctId").innerHTML = ("Correct: " + wins);
-    }
+        }
     }
 }
 
 //hide all questions and timer until the "start" button is clicked
 $(".timerClass, .hidden, .secondHidden").hide();
+
+// reseting the game  after player completes one round
+$("#restartId").click(function () {
+    clearInterval();
+    time = 10;
+    run();
+    unanswered = 0;
+    wins = 0;
+    loss = 0;
+    $("#correctId").text("Correct: " + wins);
+    $("#incorrectId").text("Incorrect: " + loss);
+    $("#unansweredId").text("Unanswered: " + unanswered);
+    $("input").prop('checked', false);
+    $(".hidden, .timerClass").show();
+    $("#startId, .secondHidden").hide();
+ });
 
 //when start is pressed, showing the time remaining, hide the start button, and show questions
 $("#startId").click(function () {
@@ -83,5 +99,5 @@ function decrement() {
     }
 }
 
-//function needed to reset the game.
+//end
 
