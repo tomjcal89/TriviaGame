@@ -9,45 +9,37 @@ var time = 9;
 var intervalId;
 var answers = ["300", "Turkey"];
 
-
 // make function to calulate the scores when they press the finished button.
 function submitAnswers() {
 
-
-//listing the questions
+    //listing the questions
     var q1 = document.forms["trivia"]["q1"].value;
     var q2 = document.forms["trivia"]["q2"].value;
 
     //for loop to check for unanswered questions
-    for (i = 1; i <= totalQues; i++) {
-        if (eval("q" + i) != answers[i - 1] || (eval("q" + i) != null || eval("q" + i) != "")) {
-            loss++;
-            document.getElementById("incorrectId").innerHTML = ("Incorrect: " + loss);
-        } 
-    }
-    
-    
-    
-    
+
     for (i = 1; i <= totalQues; i++) {
         if (eval("q" + i) == null || eval("q" + i) == "") {
             unanswered++;
             document.getElementById("unansweredId").innerHTML =
                 ("Unanswered: " + unanswered)
-        } 
+        } else if (eval("q" + i) !== answers[i - 1] || null || ""){
+            loss++;
+            document.getElementById("incorrectId").innerHTML = ("Incorrect: " + loss);
+        }
     }
-//for lopp to check for correct answers
+    //for lopp to check for correct answers
     for (i = 1; i <= totalQues; i++) {
         if (eval("q" + i) == answers[i - 1]) {
             wins++;
             document.getElementById("correctId").innerHTML = ("Correct: " + wins);
         } 
-        //adding up incorrect answers
+        }
     }
-}
+
 
 //hide all questions and timer until the "start" button is clicked
-$(".timerClass, .hidden, .secondHidden" ).hide();
+$(".timerClass, .hidden, .secondHidden").hide();
 
 //when start is pressed, showing the time remaining, hide the start button, and show questions
 $("#startId").click(function () {
@@ -60,15 +52,12 @@ $("#startId").click(function () {
 //hide questions, show timer at stopped time, correct, incorrect and unanswered scores
 $("#doneId").click(function () {
     stopTimer()
-   
     $(".secondHidden").show();
     $(".hidden").hide();
     $(".timerClass").show();
     document.getElementById("correctId").innerHTML = ("Correct: " + wins);
     document.getElementById("incorrectId").innerHTML = ("Incorrect: " + wins)
-    document.getElementById("unansweredId").innerHTML =
-        ("Unanswered: " + unanswered)
-
+    document.getElementById("unansweredId").innerHTML = ("Unanswered: " + unanswered)
     return submitAnswers();
 });
 
@@ -80,7 +69,7 @@ function run() {
 }
 
 //stoping the timer 
-function stopTimer (){
+function stopTimer() {
     clearInterval(intervalId);
 }
 
@@ -93,9 +82,8 @@ function decrement() {
         $(".secondHidden").show();
         $(".hidden").hide();
         document.getElementById("correctId").innerHTML = ("Correct: " + wins);
-        document.getElementById("incorrectId").innerHTML = ("Incorrect: " + wins)
-        document.getElementById("unansweredId").innerHTML =
-            ("Unanswered: " + unanswered)
+        document.getElementById("incorrectId").innerHTML = ("Incorrect: " + loss)
+        document.getElementById("unansweredId").innerHTML = ("Unanswered: " + unanswered)
         return submitAnswers();
     }
 }
