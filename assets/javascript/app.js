@@ -58,13 +58,15 @@ $("#restartId").click(function () {
     $("input").prop('checked', false);
     $(".hidden,  .display-4").show();
     $(".display-3, .display-2, .secondHidden").hide();
+
+
 });
 
 //when start is pressed, showing the time remaining, hide the start button, and show questions
 $("#startId").click(function () {
     run()
     $(".hidden, .display-4").show();
-    $(".display-3, .display-2, #startId").hide();
+    $(".display-3, .display-2, #startId, #test ").hide();
 
 });
 
@@ -91,6 +93,8 @@ function run() {
 function stopTimer() {
     clearInterval(intervalId);
 }
+
+
 
 //when the timer runs out, hide questions, show time, and show correct, unanswered questions and incorrect answeres.
 function decrement() {

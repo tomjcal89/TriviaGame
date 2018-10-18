@@ -1,6 +1,6 @@
 body {
     text-align: center;
-    background-image: url(../images/test4.jpg);
+    background-image: url(../images/background.jpg);
     background-size: 100%;
     color: rgb(61, 228, 240);
     font-size: 20px;
@@ -17,13 +17,20 @@ body {
     
 }
 
-input[type="radio"] {
+label, input[type="radio"] {
     
     text-align: center;
 }
     
 h2{
     vertical-align: left;
+}
+
+p {
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: greenyellow;
+    font-style: italic;
 }
     
 
@@ -51,6 +58,7 @@ button{
 
 
 .display-3 {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
     padding: 20px;
     color: #68d4b0;
 }
