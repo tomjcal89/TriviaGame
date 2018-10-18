@@ -4,10 +4,10 @@
 var wins = 0;
 var loss = 0;
 var unanswered = 0;
-var totalQues = 2;
-var time = 10;
+var totalQues = 10;
+var time = 120;
 var intervalId;
-var answers = ["300", "Turkey"];
+var answers = ["300", "Turkey", "New York", "Japan", "Las Vegas", "Golden", "None", "Reno", "16", "15"];
 
 // make function to calulate the scores when they press the finished button.
 function submitAnswers() {
@@ -15,6 +15,14 @@ function submitAnswers() {
     //listing the questions
     var q1 = document.forms["trivia"]["q1"].value;
     var q2 = document.forms["trivia"]["q2"].value;
+    var q3 = document.forms["trivia"]["q3"].value;
+    var q4 = document.forms["trivia"]["q4"].value;
+    var q5 = document.forms["trivia"]["q5"].value;
+    var q6 = document.forms["trivia"]["q6"].value;
+    var q7 = document.forms["trivia"]["q7"].value;
+    var q8 = document.forms["trivia"]["q8"].value;
+    var q9 = document.forms["trivia"]["q9"].value;
+    var q10 = document.forms["trivia"]["q10"].value;
 
     //for loop to check for unanswered questions
 
@@ -34,12 +42,12 @@ function submitAnswers() {
 }
 
 //hide all questions and timer until the "start" button is clicked
-$(".timerClass, .hidden, .secondHidden").hide();
+$(".display-4, .hidden, .display-2, .secondHidden").hide();
 
 // reseting the game  after player completes one round
 $("#restartId").click(function () {
     clearInterval();
-    time = 10;
+    time = 120;
     run();
     unanswered = 0;
     wins = 0;
@@ -48,15 +56,15 @@ $("#restartId").click(function () {
     $("#incorrectId").text("Incorrect: " + loss);
     $("#unansweredId").text("Unanswered: " + unanswered);
     $("input").prop('checked', false);
-    $(".hidden, .timerClass").show();
-    $("#startId, .secondHidden").hide();
- });
+    $(".hidden,  .display-4").show();
+    $(".display-3, .display-2, .secondHidden").hide();
+});
 
 //when start is pressed, showing the time remaining, hide the start button, and show questions
 $("#startId").click(function () {
     run()
-    $(".hidden, .timerClass").show();
-    $("#startId").hide();
+    $(".hidden, .display-4").show();
+    $(".display-3, .display-2, #startId").hide();
 
 });
 
@@ -65,7 +73,7 @@ $("#doneId").click(function () {
     stopTimer()
     $(".secondHidden").show();
     $(".hidden").hide();
-    $(".timerClass").show();
+    $(".display-4, .display-2").show();
     document.getElementById("correctId").innerHTML = ("Correct: " + wins);
     document.getElementById("incorrectId").innerHTML = ("Incorrect: " + wins)
     document.getElementById("unansweredId").innerHTML = ("Unanswered: " + unanswered)
@@ -86,7 +94,7 @@ function stopTimer() {
 
 //when the timer runs out, hide questions, show time, and show correct, unanswered questions and incorrect answeres.
 function decrement() {
-    $(".timerClass").text("Time Remaining: " + time + " Seconds");
+    $(".display-4").text("Time Remaining: " + time + " Seconds");
     time--;
     if (time === -1) {
         stopTimer();

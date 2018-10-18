@@ -1,3 +1,74 @@
 body {
     text-align: center;
+    background-image: url(../images/test4.jpg);
+    background-size: 100%;
+    color: rgb(61, 228, 240);
+    font-size: 20px;
+    font-weight: bold; 
+    max-width: 768px;
+    margin: auto;   
+    
 }
+.background {
+    border-radius: 10px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    background: rgba(75, 75, 75, 0.9);
+    
+}
+
+input[type="radio"] {
+    
+    text-align: center;
+}
+    
+h2{
+    vertical-align: left;
+}
+    
+
+#bowl {
+    width: 500px;
+    border-radius: 25px;
+}
+
+.scoreClass {
+    font-weight: bold;
+    font-family: monospace;
+    font-size: 30px;
+    padding-bottom: 40px;
+}
+
+input {
+    opacity: none;
+    margin-left:10px;
+}
+
+button{
+    margin-bottom: 40px;
+}
+
+
+
+.display-3 {
+    padding: 20px;
+    color: #68d4b0;
+}
+
+.display-4 {
+    padding: 20px;
+    font-family: fantasy;
+    color: red
+}
+
+h2 {
+    color: greenyellow;
+}
+
+
+
+button {
+    font-size: 20px;
+    background-color: bisque;
+font-family: cursive;}
+
