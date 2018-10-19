@@ -5,7 +5,7 @@ var wins = 0;
 var loss = 0;
 var unanswered = 0;
 var totalQues = 10;
-var time = 120;
+var time = 60;
 var intervalId;
 var answers = ["300", "Turkey", "New York", "Japan", "Las Vegas", "Golden", "None", "Reno", "16", "15"];
 
@@ -47,7 +47,7 @@ $(".display-4, .hidden, .display-2, .secondHidden").hide();
 // reseting the game  after player completes one round
 $("#restartId").click(function () {
     clearInterval();
-    time = 120;
+    time = 60;
     run();
     unanswered = 0;
     wins = 0;
