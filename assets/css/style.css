@@ -16,8 +16,6 @@ body {
     background: rgba(75, 75, 75, 0.9);
 }
 
-
-
 label, input[type="radio"] {
     text-align: center;
 }
@@ -33,7 +31,6 @@ p {
     font-style: italic;
 }
     
-
 #bowl {
     max-width: 500px;
     border-radius: 25px;
@@ -54,14 +51,14 @@ input {
 button{
     font-size: 20px;
     background-color: bisque;
-font-family: cursive;
+    font-family: 'Luckiest Guy', cursive;
     margin-bottom: 40px;
     margin-top: 40px;
 }
 
 .display-3 {
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
-    padding: 20px;
+    font-family: 'Fascinate Inline', cursive;
+        padding: 20px;
     color: #68d4b0;
 }
 
@@ -75,6 +72,7 @@ font-family: cursive;
 
 h2 {
     color: greenyellow;
+    font-family: 'Cinzel', serif;
 }
 
 
