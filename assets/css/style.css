@@ -16,6 +16,8 @@ body {
     background: rgba(75, 75, 75, 0.9);
 }
 
+
+
 label, input[type="radio"] {
     text-align: center;
 }
@@ -50,7 +52,11 @@ input {
 }
 
 button{
+    font-size: 20px;
+    background-color: bisque;
+font-family: cursive;
     margin-bottom: 40px;
+    margin-top: 40px;
 }
 
 .display-3 {
@@ -68,11 +74,6 @@ button{
 h2 {
     color: greenyellow;
 }
-
-button {
-    font-size: 20px;
-    background-color: bisque;
-font-family: cursive;}
 
 
 @media (max-width: 640px ) {
