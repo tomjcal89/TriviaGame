@@ -39,8 +39,8 @@ var questions = [
     },
     {
         question: "7. What is the minimum weight required for a bowling ball?",
-        options: ["A. 2 Pounds", "B. 4 Pounds", "C. 3 Pounds", "D. No minimum weight requirement"],
-        answer: "D. No minimum weight requirement"
+        options: ["A. 2 Pounds", "B. 4 Pounds", "C. 3 Pounds", "D. No requirement"],
+        answer: "D. No requirement"
     },
     {
         question: "8. _________ is the home to a Bowling Stadium!",
