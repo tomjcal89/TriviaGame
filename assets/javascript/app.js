@@ -59,6 +59,7 @@ var questions = [
     },
 ];
 
+
 //hide all questions and timer until the "start" button is clicked
 $(".time, .hidden, .display-2, .secondHidden").hide();
 
