@@ -4,7 +4,7 @@ body {
     background-image: url(../images/background.jpg);
     background-size: 100%;
     color: rgb(61, 228, 240);
-    font-size: 20px;
+    font-size: 30px;
     font-weight: bold; 
     max-width: 960px;
     margin: auto;    
@@ -73,7 +73,8 @@ button{
 h2 {
     color: greenyellow;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    text-size: 30px;
+    font-size: 40px;
+    font-weight: bold;
 }
 
 
