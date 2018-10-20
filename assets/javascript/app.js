@@ -4,7 +4,7 @@
 var wins = 0;
 var loss = 0;
 var unanswered = 0;
-var time = 50;
+var time = 75;
 var intervalId;
 var questions = [
     {
@@ -18,7 +18,7 @@ var questions = [
         answer: "B. Turkey"
     },
     {
-        question: "3. Where were the first indoor bowling lanes built?",
+        question: "3. The first indoor bowling lanes were built in which city?",
         options: ["A. Baltimore", "B. Chicago", "C. Detroit", "D. New York"],
         answer: "D. New York"
     },
@@ -29,7 +29,7 @@ var questions = [
     },
     {
         question: "5. Where is the largest US bowling center?",
-        options: ["A. Las Vegas", "B. Mall of America", "C. San Diego", "D. Miami"],
+        options: ["A. Las Vegas", "B. Seattle", "C. Philadelphia", "D. Miami"],
         answer: "A. Las Vegas"
     },
     {
@@ -66,7 +66,7 @@ $(".time, .hidden, .display-2, .secondHidden").hide();
 // reseting the game  after player completes one round
 $("#restartId").click(function () {
     clearInterval();
-    time = 50;
+    time = 75;
     run();
     unanswered = 0;
     wins = 0;
@@ -97,16 +97,18 @@ $("#startId").click(function () {
 
 function submitAnswers() {
 
-    //for loop to check for unanswered questions
+    //Loop to check for unanswered questions
     for (var x = 0; x < questions.length; x++) {
         if (!$("input[id='question" + x + "']").is(":checked")) {
             unanswered++;
             $("#unansweredId").text("Unanswered: " + unanswered);
         }
+        //Looping through to check for correct answers
         else if ($("input[id='question" + x + "']:checked").val() === questions[x].answer) {
             wins++;
             $("#correctId").text("Correct: " + wins);
         }
+        //looping through to check for incorrect answers
         else {
             loss++;
             $("#incorrectId").text("Incorrect: " + loss);
