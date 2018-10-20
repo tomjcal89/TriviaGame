@@ -60,7 +60,7 @@ var questions = [
 ];
 
 //hide all questions and timer until the "start" button is clicked
-$(".display-4, .hidden, .display-2, .secondHidden").hide();
+$(".time, .hidden, .display-2, .secondHidden").hide();
 
 // reseting the game  after player completes one round
 $("#restartId").click(function () {
@@ -74,15 +74,15 @@ $("#restartId").click(function () {
     $("#incorrectId").text("Incorrect: " + loss);
     $("#unansweredId").text("Unanswered: " + unanswered);
     $("input").prop('checked', false);
-    $(".hidden,  .display-4").show();
+    $(".hidden,  .time").show();
     $(".display-3, .display-2, .secondHidden").hide();
 });
 
 //when start is pressed, showing the time remaining, hide the start button, and show questions
 $("#startId").click(function () {
     run()
-    $(".hidden, .display-4").show();
-    $(".display-4").text("Time Remaining: " + time + " Seconds");
+    $(".hidden, .time").show();
+    $(".time").text("Time Remaining: " + time + " Seconds");
     $(".display-3, .display-2, #startId, #test ").hide();
 
     //Looping through questions to make sure they are all listed on the page         
@@ -118,7 +118,7 @@ $("#doneId").click(function () {
     stopTimer()
     $(".secondHidden").show();
     $(".hidden").hide();
-    $(".display-4, .display-2").show();
+    $(".time, .display-2").show();
     $("#correctId").text("Correct: " + wins);
     $("#incorrectId").text("Incorrect: " + wins)
     $("#unansweredId").text("Unanswered: " + unanswered)
@@ -139,7 +139,7 @@ function stopTimer() {
 
 //when the timer runs out, hide questions, show time, and show correct, unanswered questions and incorrect answeres.
 function decrement() {
-    $(".display-4").text("Time Remaining: " + time + " Seconds");
+    $(".time").text("Time Remaining: " + time + " Seconds");
     time--;
     if (time === -1) {
         stopTimer();

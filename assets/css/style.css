@@ -65,8 +65,10 @@ font-family: cursive;
     color: #68d4b0;
 }
 
-.display-4 {
+.time {
     padding: 20px;
+    padding-top: 50px;
+    font-size: 30px;
     font-family: fantasy;
     color: red
 }
