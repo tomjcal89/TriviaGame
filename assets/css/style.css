@@ -13,7 +13,7 @@ body {
     border-radius: 10px;
     margin-top: 40px;
     margin-bottom: 40px;
-    background: rgba(75, 75, 75, 0.9);
+    background: rgba(75, 75, 75, 0.97);
 }
 
 label, input[type="radio"] {
@@ -66,14 +66,16 @@ button{
     padding: 20px;
     padding-top: 50px;
     font-size: 30px;
-    font-family: fantasy;
-    color: red
+    font-family: 'Ubuntu', sans-serif;
+    color: rgb(210, 212, 216)
 }
 
 h2 {
     color: greenyellow;
-    font-family: 'Cinzel', serif;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-size: 30px;
 }
+
 
 
 @media (max-width: 640px ) {
